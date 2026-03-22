@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a [routerLink]="['/products']">MyShop</a>
+    </div>
+
+    <!-- Navigation -->
+    <!-- <nav [class.active]="menuOpen()">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav> -->
+
+    <!-- Actions -->
+    <div class="actions">
+      <!-- Profile Dropdown -->
+      <div class="profile" (click)="toggleProfile()">
+        {{ user().name }}
+        <div class="dropdown" *ngIf="profileOpen()">
+          <p>{{ user().email }}</p>
+          <button (click)="logout()">Logout</button>
+        </div>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="menu-btn" (click)="toggleMenu()">☰</button>
+    </div>
+  </div>
+</header>

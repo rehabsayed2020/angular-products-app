@@ -1,0 +1,32 @@
+<!-- new code0n -->
+
+
+<div class="filter-bar">
+  <input type="text" placeholder="Search products..." [value]="search()" (input)="search.set($event.target.value)" />
+
+  <select [value]="selectedCategory()" (change)="onChange($event)">
+    <option value="">All</option>
+    <option *ngFor="let c of categories$ | async" [value]="c">{{ c | json}}</option>
+  </select>
+</div>
+
+<app-spinner-component></app-spinner-component>
+
+
+<div *ngIf="filteredProducts().length > 0">
+
+<div class="product-grid">
+  @for (product of filteredProducts(); track product.id) {
+  <app-product-card [product]="product"></app-product-card>
+  }
+</div>
+
+<app-pagination-component
+  [totalItems]="totalProducts()"
+  [pageSize]="itemsPerPage"
+  (pageChange)="onPageChange($event)"
+ >
+</app-pagination-component>
+</div>
+
+

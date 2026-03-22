@@ -1,0 +1,5 @@
+<div class="pagination">
+  <button (click)="prev()" [disabled]="currentPage() === 1">Prev</button>
+  <span>Page {{ currentPage() }} / {{ totalPages() }}</span>
+  <button (click)="next()" [disabled]="currentPage() === totalPages()">Next</button>
+</div>

@@ -1,0 +1,72 @@
+.product-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* صورة + معلومات */
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto; /* center page */
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.product-details .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.product-details .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.category {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1565c0;
+}
+
+
+@media (max-width: 768px) {
+  .product-details {
+    grid-template-columns: 1fr; /* صورة فوق + معلومات تحت */
+  }
+}
